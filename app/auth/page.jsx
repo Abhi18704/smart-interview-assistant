@@ -13,7 +13,7 @@ export default function Login() {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: "https://smart-interview-assistant-eight.vercel.app", // 👈 back to root (this page)
+        redirectTo: "https://smart-interview-assistant-eight.vercel.app/dashboard", // 👈 back to root (this page)
       },
     })
   }
