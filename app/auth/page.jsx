@@ -8,30 +8,9 @@ import React from 'react'
 export default function Login() {
   const router = useRouter()
 
-  const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: "https://smart-interview-assistant-eight.vercel.app/auth/callback"
-      },
-    });
-
-    if (error) {
-      console.error('Google Sign In Error:', error.message);
-    }
-  };
-
-  // Automatically redirect if user is already logged in
-  useEffect(() => {
-    const checkSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (data?.session) {
-        router.push('/dashboard');
-      }
-    };
-
-    checkSession();
-  }, [router]);
+   const signInWithGoogle = async () => {
+    router.push('/dashboard')
+  }
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
       <div className='flex flex-col items-center border rounded-2xl p-8'>
