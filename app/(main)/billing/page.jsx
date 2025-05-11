@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/services/supabaseClient"
@@ -37,15 +36,6 @@ export default function Credits() {
   const [purchasedPlan, setPurchasedPlan] = useState(null)
   const [loadingPlan, setLoadingPlan] = useState(null)
   const [totalCredits, setTotalCredits] = useState(0)
-
-
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) router.push("/login")
-    })
-  }, [router])
-
   const handlePurchase = async (plan) => {
   setLoadingPlan(plan.name)
 
@@ -55,8 +45,6 @@ export default function Credits() {
     setPurchasedPlan(plan)
   }, 2000)
 }
-
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <WelcomeContainer />
