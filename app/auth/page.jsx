@@ -1,4 +1,5 @@
 "use client"
+import { useEffect } from 'react'
 import { supabase } from '@/services/supabaseClient'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -9,17 +10,31 @@ export default function Login() {
   const router = useRouter()
 
   const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: "https://smart-interview-assistant-eight.vercel.app/dashboard"
+        redirectTo: "https://smart-interview-assistant-eight.vercel.app", // 👈 back to root (this page)
       },
     })
-
-    if (error) {
-      console.error('Google Sign In Error:', error.message)
-    }
   }
+
+  // 👇 This runs after user is redirected back with token in hash
+  useEffect(() => {
+    const handleLogin = async () => {
+      const { data, error } = await supabase.auth.getSession()
+
+      if (error) {
+        console.error('Session Error:', error.message)
+        return
+      }
+
+      if (data?.session) {
+        router.push('/dashboard')
+      }
+    }
+
+    handleLogin()
+  }, [router])
 
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
