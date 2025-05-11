@@ -12,7 +12,7 @@ export default function Login() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `http://localhost:3000/dashboard`
+        redirectTo: `http://smart-interview-assistant-eight.vercel.app/dashboard`
       },
     })
 
