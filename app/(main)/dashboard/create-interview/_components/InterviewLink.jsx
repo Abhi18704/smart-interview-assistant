@@ -59,10 +59,10 @@ function InterviewLink({ interview_id, formData }) {
       </div>
 
       <div className='flex gap-5 w-full justify-between mt-6'>
-        <a href='http://localhost:3000/dashboard'>
+        <a href='http://smart-interview-assistant-eight.vercel.app/dashboard'>
         <Button variant={'outline'}><ArrowLeft/> Back to Dashborad</Button>
         </a>
-        <a href={`/interview/${interview_id}`}>
+        <a href={`http://smart-interview-assistant-eight.vercel.app/interview/${interview_id}`}>
         <Button><Plus/> Crate New interview</Button>
         </a>
       </div>

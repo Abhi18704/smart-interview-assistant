@@ -107,7 +107,7 @@ const Page = () => {
           <h2 className="text-3xl font-extrabold">Ready to Transform Your Hiring Process?</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">Join thousands of companies using our AI Voice Agent to streamline interviews and find top talent.</p>
           <div className="mt-8">
-            <a href="http://localhost:3000/auth" className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100">Start Free Trial</a>
+            <a href="http://smart-interview-assistant-eight.vercel.app/auth" className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100">Start Free Trial</a>
           </div>
         </div>
       </section>
