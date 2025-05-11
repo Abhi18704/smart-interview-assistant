@@ -1,103 +1,146 @@
-import Image from "next/image";
+import React from 'react';
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-50">
+      {/* Navbar */}
+      <nav className="bg-white shadow-lg fixed w-full z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold text-blue-600">AI Voice Agent</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <a href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+              <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+              <a href="#contact" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+              <a href="#try-now" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Try Now</a>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 flex items-center justify-center min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              Revolutionize Interviews with AI Voice Agent
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              Conduct seamless, intelligent, and engaging interviews with our cutting-edge AI-powered voice technology.
+            </p>
+            <div className="mt-8 flex justify-center md:justify-start space-x-4">
+              <a href="#try-now" className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700">Get Started</a>
+              <a href="#demo" className="border border-blue-600 text-blue-600 px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-50">Watch Demo</a>
+            </div>
+          </div>
+          <div className="md:w-1/2 mt-10 md:mt-0">
+            <img src="agent.png" alt="AI Voice Agent" className="rounded-lg shadow-xl" />
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-gray-900 text-center">Why Choose Our AI Voice Agent?</h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+              <div className="text-blue-600 text-4xl mb-4">🎙️</div>
+              <h3 className="text-xl font-semibold text-gray-900">Natural Conversations</h3>
+              <p className="mt-2 text-gray-600">Engage candidates with human-like voice interactions powered by advanced NLP.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+              <div className="text-blue-600 text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold text-gray-900">Real-Time Analysis</h3>
+              <p className="mt-2 text-gray-600">Instantly evaluate responses with sentiment and competency analysis.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+              <div className="text-blue-600 text-4xl mb-4">🌐</div>
+              <h3 className="text-xl font-semibold text-gray-900">Multi-Language Support</h3>
+              <p className="mt-2 text-gray-600">Conduct interviews in multiple languages with seamless translation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-gray-900 text-center">How It Works</h2>
+          <div className="mt-12 space-y-12">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2">
+                <img src="schedule.jpg" alt="Step 1" className="rounded-lg shadow-md" />
+              </div>
+              <div className="md:w-1/2 mt-6 md:mt-0 md:pl-10">
+                <h3 className="text-2xl font-semibold text-gray-900">1. Schedule the Interview</h3>
+                <p className="mt-2 text-gray-600">Easily set up interviews with our intuitive dashboard and send invites to candidates.</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row-reverse items-center">
+              <div className="md:w-1/2">
+                <img src="conduct.png" alt="Step 2" className="rounded-lg w-100 h-100" />
+              </div>
+              <div className="md:w-1/2 mt-6 md:mt-0 md:pr-10">
+                <h3 className="text-2xl font-semibold text-gray-900">2. Conduct the Interview</h3>
+                <p className="mt-2 text-gray-600">Our AI conducts the interview, asking tailored questions and adapting to responses.</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2">
+                <img src="review.png" alt="Step 3" className="rounded-lg shadow-md" />
+              </div>
+              <div className="md:w-1/2 mt-6 md:mt-0 md:pl-10">
+                <h3 className="text-2xl font-semibold text-gray-900">3. Review Insights</h3>
+                <p className="mt-2 text-gray-600">Receive detailed reports with actionable insights to make informed hiring decisions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="try-now" className="py-20 bg-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-extrabold">Ready to Transform Your Hiring Process?</h2>
+          <p className="mt-4 text-lg max-w-2xl mx-auto">Join thousands of companies using our AI Voice Agent to streamline interviews and find top talent.</p>
+          <div className="mt-8">
+            <a href="http://localhost:3000/auth" className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100">Start Free Trial</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold">AI Voice Agent</h3>
+              <p className="mt-2 text-gray-400">Empowering companies to hire smarter with AI-driven interviews.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Quick Links</h3>
+              <ul className="mt-2 space-y-2">
+                <li><a href="#features" className="text-gray-400 hover:text-white">Features</a></li>
+                <li><a href="#how-it-works" className="text-gray-400 hover:text-white">How It Works</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Contact Us</h3>
+              <p className="mt-2 text-gray-400">Email: abhigolanakonda4546@gmail.com</p>
+              <p className="mt-1 text-gray-400">Phone: +91 8712318704 </p>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-gray-700 pt-8 text-center">
+            <p className="text-gray-400">&copy; 2025 AI Voice Agent. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
+export default Page;
