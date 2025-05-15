@@ -13,7 +13,6 @@ function InterviewHeader() {
           className="object-contain"
         />
       </div>
-
     </header>
   );
 }

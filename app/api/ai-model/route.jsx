@@ -17,7 +17,6 @@ export async function POST(req){
     messages: [
       { role: "user", content: FINAL_PROMPT }
     ],
-    
   })
   
   return NextResponse.json(completion.choices[0].message)
