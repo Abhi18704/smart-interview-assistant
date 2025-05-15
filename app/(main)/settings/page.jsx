@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 function SignOut() {
   const handleSignOut = () => {
-    window.location.href = "http://localhost:3000"
+    window.location.href = "https://smart-interview-assistant-eight.vercel.app/"
   }
 
   return (
