@@ -28,7 +28,7 @@ function QuestionList({ formData, onCreateLink }) {
       });
       console.log(result.data.content);
       const content = result.data.content;
-      const finalContent = content.replace('"```json','').replace('```','');
+      const finalContent = content.replace('```json','').replace('```','');
       const parsedContent = JSON.parse(finalContent);
   
       setQuestionList(parsedContent?.InterviewQuestions || parsedContent?.interviewQuestions || []);
